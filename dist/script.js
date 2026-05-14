@@ -2,39 +2,51 @@
 const products = [
     {
         title: "Classic Sneakers",
-        price: "$79",
+        price: "₹3,299",
         stock: "In stock",
         image: "https://images.unsplash.com/photo-1528701800489-20b0b38d8d16?auto=format&fit=crop&w=800&q=80"
     },
     {
         title: "Modern Backpack",
-        price: "$54",
+        price: "₹1,899",
         stock: "Only 12 left",
         image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
     },
     {
         title: "Wireless Headphones",
-        price: "$129",
+        price: "₹4,499",
         stock: "In stock",
         image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
     },
     {
         title: "Daily Tote Bag",
-        price: "$34",
+        price: "₹899",
         stock: "Low stock",
         image: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80"
     },
     {
         title: "Cozy Hoodie",
-        price: "$49",
+        price: "₹1,499",
         stock: "In stock",
         image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
     },
     {
         title: "Smart Watch",
-        price: "$199",
+        price: "₹8,999",
         stock: "12 on hand",
         image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        title: "Sports Cap",
+        price: "₹549",
+        stock: "In stock",
+        image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        title: "Bluetooth Speaker",
+        price: "₹2,299",
+        stock: "Only 5 left",
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
     }
 ];
 const productList = document.getElementById("productList");

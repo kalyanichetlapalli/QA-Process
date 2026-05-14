@@ -1,6 +1,6 @@
 # E-Commerce Dashboard
 
-A simple static e-commerce dashboard with basic product cards, metrics, and recent orders.
+A simple static e-commerce dashboard with basic product cards, metrics, and recent orders. All product prices are shown in Indian rupees (₹).
 
 ## Files
 
