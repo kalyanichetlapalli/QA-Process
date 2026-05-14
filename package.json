@@ -4,10 +4,15 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.js",
     "watch": "tsc --watch",
     "dev": "npm run watch"
   },
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/parser": "^7.32.0",
+    "@typescript-eslint/eslint-plugin": "^7.32.0"
   }
 }
