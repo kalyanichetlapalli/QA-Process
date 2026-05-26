@@ -5,6 +5,8 @@ type Product = {
   image: string;
 };
 
+type Theme = "light" | "dark";
+
 const products: Product[] = [
   {
     title: "Classic Sneakers",
@@ -56,6 +58,13 @@ const products: Product[] = [
   }
 ];
 
+function stockBadgeClass(stock: string): string {
+  const s = stock.toLowerCase();
+  if (s.includes("low") || s.includes("only")) return "status-warning";
+  if (s.includes("in stock")) return "status-success";
+  return "status-info";
+}
+
 const productList = document.getElementById("productList") as HTMLDivElement | null;
 
 if (productList) {
@@ -67,9 +76,34 @@ if (productList) {
       <div class="product-body">
         <h3 class="product-title">${product.title}</h3>
         <p class="product-price">${product.price}</p>
-        <p class="product-meta">${product.stock}</p>
+        <span class="status-badge ${stockBadgeClass(product.stock)}">${product.stock}</span>
       </div>
     `;
     productList.appendChild(card);
   });
 }
+
+const THEME_KEY = "shopdash-theme";
+const root = document.documentElement;
+const themeBtn = document.getElementById("themeToggle") as HTMLButtonElement | null;
+
+function applyTheme(theme: Theme): void {
+  root.setAttribute("data-theme", theme);
+  if (themeBtn) {
+    themeBtn.textContent = theme === "dark" ? "☀" : "🌙";
+    themeBtn.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
+  }
+}
+
+const stored = localStorage.getItem(THEME_KEY) as Theme | null;
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+applyTheme(stored ?? (prefersDark ? "dark" : "light"));
+
+themeBtn?.addEventListener("click", () => {
+  const next: Theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});

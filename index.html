@@ -7,104 +7,140 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-shell">
-    <header class="topbar">
-      <div class="brand">ShopDash</div>
-      <div class="topbar-actions">
-        <span class="status-pill">Live</span>
-        <button class="action-btn">New product</button>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">ShopDash</span>
       </div>
-    </header>
-
-    <section class="hero-panel">
-      <div>
-        <p class="eyebrow">E-Commerce Dashboard</p>
-        <h1>Store performance at a glance</h1>
-        <p>Monitor sales, stock, visitors, and featured products from one page.</p>
+      <nav class="sidebar-nav" aria-label="Primary">
+        <a href="#" class="nav-item active"><span class="nav-dot"></span>Dashboard</a>
+        <a href="#" class="nav-item"><span class="nav-dot"></span>Orders</a>
+        <a href="#" class="nav-item"><span class="nav-dot"></span>Products</a>
+        <a href="#" class="nav-item"><span class="nav-dot"></span>Customers</a>
+        <a href="#" class="nav-item"><span class="nav-dot"></span>Analytics</a>
+        <a href="#" class="nav-item"><span class="nav-dot"></span>Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <p class="sidebar-help-title">Need help?</p>
+        <a href="#" class="sidebar-help-link">View docs →</a>
       </div>
-      <div class="hero-quickstats">
-        <div class="quickstat">
-          <span>24</span>
-          <p>New orders</p>
-        </div>
-        <div class="quickstat">
-          <span>18</span>
-          <p>Low stock items</p>
-        </div>
-        <div class="quickstat">
-          <span>5.1k</span>
-          <p>Visitors</p>
-        </div>
-      </div>
-    </section>
+    </aside>
 
-    <main class="dashboard-grid">
-      <section class="card stats-card">
-        <h2>Key metrics</h2>
-        <div class="stats-grid">
-          <article class="metric-card">
-            <p class="metric-label">Revenue</p>
-            <p class="metric-value">₹18,450</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-label">Conversion</p>
-            <p class="metric-value">4.8%</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-label">Products live</p>
-            <p class="metric-value">72</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-label">Returned</p>
-            <p class="metric-value">6</p>
-          </article>
+    <div class="main-col">
+      <header class="topbar">
+        <div class="topbar-search">
+          <input type="search" placeholder="Search orders, products, customers..." aria-label="Search" />
         </div>
-      </section>
+        <div class="topbar-actions">
+          <span class="status-pill">● Live</span>
+          <button id="themeToggle" class="theme-btn" type="button" aria-label="Switch to dark mode">🌙</button>
+          <button class="action-btn" type="button">+ New product</button>
+        </div>
+      </header>
 
-      <section class="card card-large sales-card">
-        <div class="card-header">
-          <h2>Today’s sales</h2>
-          <span class="tag">+12% vs yesterday</span>
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">E-Commerce Dashboard</p>
+          <h1>Store performance at a glance</h1>
+          <p>Monitor sales, stock, visitors, and featured products from one page.</p>
         </div>
-        <div class="sales-summary">
-          <div>
-            <p class="sales-value">₹6,200</p>
-            <p class="sales-note">Total sales in the last 24 hours</p>
+        <div class="hero-quickstats">
+          <div class="quickstat">
+            <span>24</span>
+            <p>New orders</p>
           </div>
-          <div class="sales-chart">
-            <div class="bar small"></div>
-            <div class="bar medium"></div>
-            <div class="bar large"></div>
-            <div class="bar medium"></div>
-            <div class="bar small"></div>
+          <div class="quickstat">
+            <span>18</span>
+            <p>Low stock items</p>
+          </div>
+          <div class="quickstat">
+            <span>5.1k</span>
+            <p>Visitors</p>
           </div>
         </div>
       </section>
 
-      <section class="card products-card">
-        <div class="card-header">
-          <div>
-            <h2>Featured products</h2>
-            <p>Manage inventory and pricing for top items.</p>
+      <main class="dashboard-grid">
+        <section class="card stats-card">
+          <h2>Key metrics</h2>
+          <div class="stats-grid">
+            <article class="metric-card">
+              <p class="metric-label">Revenue</p>
+              <p class="metric-value">₹18,450</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Conversion</p>
+              <p class="metric-value">4.8%</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Products live</p>
+              <p class="metric-value">72</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Returned</p>
+              <p class="metric-value">6</p>
+            </article>
           </div>
-          <button class="action-btn tertiary">View all</button>
-        </div>
-        <div id="productList" class="product-grid"></div>
-      </section>
+        </section>
 
-      <section class="card orders-card">
-        <div class="card-header">
-          <h2>Recent orders</h2>
-          <span class="tag tag-muted">Live updates</span>
-        </div>
-        <ul class="order-list">
-          <li><strong>#1092</strong> Shoe order • <span>Processing</span></li>
-          <li><strong>#1087</strong> Wireless earbuds • <span>Shipped</span></li>
-          <li><strong>#1081</strong> Backpack • <span>Delivered</span></li>
-          <li><strong>#1073</strong> Cozy hoodie • <span>Pending</span></li>
-        </ul>
-      </section>
-    </main>
+        <section class="card card-large sales-card">
+          <div class="card-header">
+            <h2>Today's sales</h2>
+            <span class="tag">+12% vs yesterday</span>
+          </div>
+          <div class="sales-summary">
+            <div>
+              <p class="sales-value">₹6,200</p>
+              <p class="sales-note">Total sales in the last 24 hours</p>
+            </div>
+            <div class="sales-chart">
+              <div class="bar small"></div>
+              <div class="bar medium"></div>
+              <div class="bar large"></div>
+              <div class="bar medium"></div>
+              <div class="bar small"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card products-card">
+          <div class="card-header">
+            <div>
+              <h2>Featured products</h2>
+              <p class="card-sub">Manage inventory and pricing for top items.</p>
+            </div>
+            <button class="action-btn tertiary" type="button">View all</button>
+          </div>
+          <div id="productList" class="product-grid"></div>
+        </section>
+
+        <section class="card orders-card">
+          <div class="card-header">
+            <h2>Recent orders</h2>
+            <span class="tag tag-muted">Live updates</span>
+          </div>
+          <ul class="order-list">
+            <li>
+              <span class="order-info"><strong>#1092</strong> Shoe order</span>
+              <span class="status-badge status-info">Processing</span>
+            </li>
+            <li>
+              <span class="order-info"><strong>#1087</strong> Wireless earbuds</span>
+              <span class="status-badge status-accent">Shipped</span>
+            </li>
+            <li>
+              <span class="order-info"><strong>#1081</strong> Backpack</span>
+              <span class="status-badge status-success">Delivered</span>
+            </li>
+            <li>
+              <span class="order-info"><strong>#1073</strong> Cozy hoodie</span>
+              <span class="status-badge status-warning">Pending</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </div>
 
   <script src="dist/script.js"></script>
